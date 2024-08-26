@@ -55,6 +55,10 @@
             font-weight: bold;
             margin-left: 10px; /* Space between the image and text */
         }
+        a {
+            color: black; /* Change 'black' to any color you prefer */
+            text-decoration: none; /* Optional: removes underline */
+        }
 
         /* Checkbtn (hamburger menu) */
         .checkbtn {
