@@ -46,19 +46,19 @@
         .logo-container {
             display: flex;
             align-items: center;
-            margin-left: 5px; /* Space between the logo and the menu */
+            margin-left: 20px; /* Increased space for better placement */
         }
 
         /* Logo image styling */
         .logo-img {
-            height: 100px; /* Increased size for better visibility */
+            height: 60px; /* Adjusted size for better placement */
             width: auto;
         }
 
         /* Logo text styling */
         .logo-text {
             color: white;
-            font-size: 30px; /* Adjust font size for better visibility */
+            font-size: 24px; /* Adjust font size for balance */
             font-weight: bold;
             margin-left: 10px; /* Space between the image and text */
         }
@@ -68,7 +68,7 @@
             font-size: 30px;
             color: white;
             cursor: pointer;
-            display: block; /* Ensure it is visible on all screen sizes */
+            display: none; /* Hide on larger screens */
         }
 
         /* Navigation links styling */
@@ -137,11 +137,19 @@
             text-align: center;
             padding: 100px 20px; /* Added padding to avoid overlap with fixed nav */
             background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+            min-height: calc(100vh - 80px); /* Ensure full height minus the nav */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .hero .container {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .hero .hero-text {
+            max-width: 600px; /* Set max width for better readability */
         }
 
         .hero .hero-text h3, .hero .hero-text h1 {
@@ -162,6 +170,32 @@
 
         .hero .btn:hover {
             background: darkred;
+        }
+
+        /* Additional styles */
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 24px;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: red;
+        }
+
+        .footer {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
@@ -184,9 +218,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-text">
-                <br>
                 <h3>Transform Your Workout</h3>
-            
                 <h3>Transform Your Life</h3>
                 <h1>JOIN</h1>
                 <h1>FITNESS</h1>
@@ -196,5 +228,15 @@
             </div>
         </div>
     </section>
+    <div class="social-icons">
+        <a href="#" aria-label="Facebook">F</a>
+        <a href="#" aria-label="Twitter">T</a>
+        <a href="#" aria-label="Instagram">I</a>
+        <a href="#" aria-label="YouTube">Y</a>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 FitZone. All rights reserved.</p>
+    </footer>
 </body>
-</html>
+    </html>
+    
