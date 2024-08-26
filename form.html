@@ -41,7 +41,7 @@
             border: 1px solid #ff0000;
             border-radius: 4px;
             background-color: #000000;
-            color: #ff0000;
+            color: #ffffff;
         }
         .form-container input[type="submit"] {
             width: 100%;
@@ -56,6 +56,7 @@
             background-color: #ff3333;
         }
         .success-message {
+            display: none;
             text-align: center;
             color: #00ff00;
             margin-top: 20px;
@@ -67,7 +68,7 @@
 
 <div class="form-container">
     <h2>Sign Up</h2>
-    <form action="#" method="POST">
+    <form id="signupForm" onsubmit="showSuccessMessage(event)">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -99,13 +100,17 @@
 
         <input type="submit" value="Submit">
     </form>
-
-    <!-- Assuming this message is shown after the form submission -->
-    <div class="success-message">
+    <div class="success-message" id="successMessage">
         Form submitted successfully!
     </div>
 </div>
 
+<script>
+    function showSuccessMessage(event) {
+        event.preventDefault();
+        document.getElementById('successMessage').style.display = 'block';
+    }
+</script>
+
 </body>
-              </html>
-              
+</html>
