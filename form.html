@@ -68,7 +68,7 @@
 
 <div class="form-container">
     <h2>Sign Up</h2>
-    <form id="signupForm" onsubmit="showSuccessMessage(event)">
+    <form action="#" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
@@ -80,12 +80,14 @@
 
         <label for="gender">Gender:</label>
         <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select your gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
         </select>
 
         <label for="city">City:</label>
         <select id="city" name="city" required>
+            <option value="" disabled selected>Select your city</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Delhi">Delhi</option>
             <option value="Bengaluru">Bengaluru</option>
@@ -100,17 +102,7 @@
 
         <input type="submit" value="Submit">
     </form>
-    <div class="success-message" id="successMessage">
-        Form submitted successfully!
-    </div>
 </div>
-
-<script>
-    function showSuccessMessage(event) {
-        event.preventDefault();
-        document.getElementById('successMessage').style.display = 'block';
-    }
-</script>
 
 </body>
 </html>
