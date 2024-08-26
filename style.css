@@ -107,17 +107,8 @@
                 justify-content: center;
                 align-items: center;
                 transition: left 0.3s ease;
-                padding: 20px 0;
-            }
-                
-            nav ul .menu-logo {
-                display: none;
-                margin-bottom: 20px;
-            } 
-                
-            #check:checked ~ ul .menu-logo {
-                display: block; /* Show logo when menu is open */
-            }        
+                padding: 0;
+            }       
             nav ul li {
                 margin: 15px 0; /* Increased margin for better spacing */
                 line-height: 30px;
