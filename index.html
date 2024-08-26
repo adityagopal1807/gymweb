@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitZone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+/* Reset and global styles */
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('https://i.ibb.co/nDcbLGf/background.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+/* Navigation bar styling */
+nav {
+    background: #000;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed; /* Fixed positioning for sticky nav */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure nav is on top of other elements */
+}
+
+/* Hide the checkbox */
+#check {
+    display: none;
+}
+
+/* Logo container styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between the logo and the menu */
+}
+
+/* Logo image styling */
+.logo-img {
+    height: 70px; /* Increased size for better visibility */
+    width: auto;
+    margin-right: 10px; /* Space between the image and text */
+}
+
+/* Logo text styling */
+.logo-text {
+    color: white;
+    font-size: 24px; /* Adjust font size for better visibility */
+    font-weight: bold;
+}
+
+/* Checkbtn (hamburger menu) */
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+/* Navigation links styling */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-left: auto; /* Ensure menu is aligned to the right */
+}
+
+nav ul li {
+    line-height: 80px;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 16px; /* Adjust font size for better readability */
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    background: red;
+}
+
+/* Responsive styling */
+@media (max-width: 858px) {
+    .checkbtn {
+        display: block; /* Show hamburger menu on small screens */
+    }
+
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        top: 80px; /* Adjusted top to ensure it doesn’t overlap with the fixed header */
+        left: -100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: left 0.3s ease;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 15px 0; /* Increased margin for better spacing */
+        line-height: 30px;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+/* Hero section styling */
+.hero {
+    color: white;
+    text-align: center;
+    padding: 100px 20px; /* Added padding to avoid overlap with fixed nav */
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+}
+
+.hero .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero .hero-text h6, .hero .hero-text h1 {
+    margin-bottom: 20px;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #fff;
+    background: red;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+    background: darkred;
+}
+</style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/DKgVptM/FITZONE-removebg-preview.png" alt="FitZone Logo" class="logo-img">
+            <label class="logo-text">FitZone</label>
+        </div>
+        <ul>
+            <li><a class="active" href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h6>Welcome to</h6>
+                <h1>FitZone</h1>
+                <a href="#" class="btn">Join Now</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
