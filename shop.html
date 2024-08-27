@@ -76,27 +76,27 @@
         .product-card button:hover {
             background-color: #cc0000;
         }
-        .cart-summary {
+        .cart-summary, .favorite-summary {
             background-color: #1a1a1a;
             padding: 20px;
             border-radius: 10px;
             margin-top: 40px;
         }
-        .cart-summary h2 {
+        .cart-summary h2, .favorite-summary h2 {
             color: #FF0000;
             font-family: 'Montserrat', sans-serif;
         }
-        .cart-summary table {
+        .cart-summary table, .favorite-summary table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
-        .cart-summary th, .cart-summary td {
+        .cart-summary th, .cart-summary td, .favorite-summary th, .favorite-summary td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #333;
         }
-        .cart-summary th {
+        .cart-summary th, .favorite-summary th {
             color: #FF0000;
         }
         .cart-summary .total {
@@ -146,6 +146,9 @@
                 <form action="cart.html" method="POST">
                     <button type="submit">Add to Cart</button>
                 </form>
+                <form action="favorite.html" method="POST">
+                    <button type="submit">Add to Favorites</button>
+                </form>
                 <form action="payment.html" method="POST">
                     <button type="submit">Buy Now</button>
                 </form>
@@ -159,6 +162,9 @@
                 <div class="price">$59.99</div>
                 <form action="cart.html" method="POST">
                     <button type="submit">Add to Cart</button>
+                </form>
+                <form action="favorite.html" method="POST">
+                    <button type="submit">Add to Favorites</button>
                 </form>
                 <form action="payment.html" method="POST">
                     <button type="submit">Buy Now</button>
@@ -174,6 +180,9 @@
                 <form action="cart.html" method="POST">
                     <button type="submit">Add to Cart</button>
                 </form>
+                <form action="favorite.html" method="POST">
+                    <button type="submit">Add to Favorites</button>
+                </form>
                 <form action="payment.html" method="POST">
                     <button type="submit">Buy Now</button>
                 </form>
@@ -188,6 +197,9 @@
                 <form action="cart.html" method="POST">
                     <button type="submit">Add to Cart</button>
                 </form>
+                <form action="favorite.html" method="POST">
+                    <button type="submit">Add to Favorites</button>
+                </form>
                 <form action="payment.html" method="POST">
                     <button type="submit">Buy Now</button>
                 </form>
@@ -197,35 +209,18 @@
         <!-- Cart Summary (Placeholder) -->
         <div class="cart-summary">
             <h2>Your Cart</h2>
-            <table>
-                <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>Protein Box</td>
-                    <td>1</td>
-                    <td>$39.99</td>
-                    <td>$39.99</td>
-                </tr>
-                <!-- More items can be added here -->
-                <tr>
-                    <td colspan="3" class="total">Total:</td>
-                    <td>$39.99</td>
-                </tr>
-            </table>
-            <form action="payment.html" method="POST">
-                <button type="submit" style="margin-top: 20px;">Proceed to Payment</button>
-            </form>
+            <p>This page is just a placeholder and doesn't actually store cart items.</p>
+            <p>Items would normally appear here, showing a total amount.</p>
+        </div>
+
+        <!-- Favorite Summary (Placeholder) -->
+        <div class="favorite-summary">
+            <h2>Your Favorites</h2>
+            <p>This page is just a placeholder and doesn't actually store favorite items.</p>
+            <p>Items would normally appear here.</p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 FitZone. All Rights Reserved.</p>
-    </footer>
-
-</body>
-    </html>
-                        
+        <p>&copy
+            
