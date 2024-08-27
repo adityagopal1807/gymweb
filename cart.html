@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - FitZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #FF0000; /* Red heading */
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #FFFFFF;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #1a1a1a;
+        }
+        tr:nth-child(even) {
+            background-color: #333333;
+        }
+        .total {
+            text-align: right;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .checkout-btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            background-color: #FF0000;
+            color: #FFFFFF;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .checkout-btn:hover {
+            background-color: #cc0000;
+        }
+        .empty-cart {
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            color: #FFFFFF;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #FF0000;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
+            <label class="logo-text">FitZone</label>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Your Shopping Cart</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example item -->
+                <tr>
+                    <td><img src="https://i.ibb.co/0JbLsKz/protein-box.jpg" alt="Protein Box" style="max-width: 100px;"></td>
+                    <td>Protein Box</td>
+                    <td>$39.99</td>
+                    <td>1</td>
+                    <td>$39.99</td>
+                    <td><a href="shop.html" class="checkout-btn">Remove</a></td>
+                </tr>
+                <!-- Add more items here -->
+            </tbody>
+        </table>
+        <div class="total">
+            <strong>Total: $39.99</strong>
+        </div>
+        <a href="payment.html" class="checkout-btn">Proceed to Checkout</a>
+        <p class="empty-cart">Your cart is empty</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FitZone. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
