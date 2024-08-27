@@ -58,6 +58,10 @@
             font-weight: bold;
             margin-bottom: 20px;
         }
+        .product-card form {
+            display: inline-block;
+            margin-top: 10px;
+        }
         .product-card button {
             background-color: #FF0000;
             color: #FFFFFF;
@@ -71,6 +75,35 @@
         }
         .product-card button:hover {
             background-color: #cc0000;
+        }
+        .cart-summary {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        .cart-summary h2 {
+            color: #FF0000;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .cart-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .cart-summary th, .cart-summary td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        .cart-summary th {
+            color: #FF0000;
+        }
+        .cart-summary .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: right;
+            padding-top: 20px;
         }
         footer {
             text-align: center;
@@ -110,8 +143,12 @@
                 <h2>Protein Box</h2>
                 <p>High-quality protein supplements to boost your workouts and recovery.</p>
                 <div class="price">$39.99</div>
-                <button>Buy Now</button>
-                <button>Add to Cart</button>
+                <form action="cart.html" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+                <form action="payment.html" method="POST">
+                    <button type="submit">Buy Now</button>
+                </form>
             </div>
 
             <!-- Product 2 -->
@@ -120,8 +157,12 @@
                 <h2>Dumbbell Set</h2>
                 <p>Durable and versatile dumbbell set for all your strength training needs.</p>
                 <div class="price">$59.99</div>
-                <button>Buy Now</button>
-                <button>Add to Cart</button>
+                <form action="cart.html" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+                <form action="payment.html" method="POST">
+                    <button type="submit">Buy Now</button>
+                </form>
             </div>
 
             <!-- Product 3 -->
@@ -130,8 +171,12 @@
                 <h2>Yoga Mat</h2>
                 <p>Comfortable and non-slip yoga mat for your daily practice.</p>
                 <div class="price">$19.99</div>
-                <button>Buy Now</button>
-                <button>Add to Cart</button>
+                <form action="cart.html" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+                <form action="payment.html" method="POST">
+                    <button type="submit">Buy Now</button>
+                </form>
             </div>
 
             <!-- Product 4 -->
@@ -140,9 +185,40 @@
                 <h2>Resistance Bands</h2>
                 <p>Set of resistance bands to enhance your strength training and flexibility.</p>
                 <div class="price">$14.99</div>
-                <button>Buy Now</button>
-                <button>Add to Cart</button>
+                <form action="cart.html" method="POST">
+                    <button type="submit">Add to Cart</button>
+                </form>
+                <form action="payment.html" method="POST">
+                    <button type="submit">Buy Now</button>
+                </form>
             </div>
+        </div>
+
+        <!-- Cart Summary (Placeholder) -->
+        <div class="cart-summary">
+            <h2>Your Cart</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Protein Box</td>
+                    <td>1</td>
+                    <td>$39.99</td>
+                    <td>$39.99</td>
+                </tr>
+                <!-- More items can be added here -->
+                <tr>
+                    <td colspan="3" class="total">Total:</td>
+                    <td>$39.99</td>
+                </tr>
+            </table>
+            <form action="payment.html" method="POST">
+                <button type="submit" style="margin-top: 20px;">Proceed to Payment</button>
+            </form>
         </div>
     </div>
 
@@ -151,4 +227,5 @@
     </footer>
 
 </body>
-</html>
+    </html>
+                        
