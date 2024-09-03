@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - FitZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #FF0000; /* Red heading */
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            background-color: #1A1A1A; /* Dark gray background */
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px;
+            width: 300px;
+            text-align: center;
+        }
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product-title {
+            color: #FF0000; /* Red title */
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .product-price {
+            color: #FFFFFF;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        .product-description {
+            color: #CCCCCC;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #FF0000;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">☰</label>
+    <div class="logo-container">
+        <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
+        <label class="logo-text">FitZone</label>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a class="active" href="products.html">Shop</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <h1>Our Products</h1>
+
+    <div class="product-section">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://i.ibb.co/9TytWWJ/dumbbells.jpg" alt="Dumbbells">
+            </div>
+            <h2 class="product-title">Dumbbells</h2>
+            <p class="product-description">Durable and balanced dumbbells perfect for strength training.</p>
+            <p class="product-price">$50.00</p>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://i.ibb.co/yf1b8w5/yoga-mat.jpg" alt="Yoga Mat">
+            </div>
+            <h2 class="product-title">Yoga Mat</h2>
+            <p class="product-description">High-quality, non-slip yoga mat for all your fitness needs.</p>
+            <p class="product-price">$25.00</p>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://i.ibb.co/TgLkGzr/resistance-bands.jpg" alt="Resistance Bands">
+            </div>
+            <h2 class="product-title">Resistance Bands</h2>
+            <p class="product-description">Versatile resistance bands ideal for strength and flexibility workouts.</p>
+            <p class="product-price">$20.00</p>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://i.ibb.co/pL5NTL6/protein-powder.jpg" alt="Protein Powder">
+            </div>
+            <h2 class="product-title">Protein Powder</h2>
+            <p class="product-description">Premium whey protein powder to support muscle recovery and growth.</p>
+            <p class="product-price">$35.00</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 FitZone. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
