@@ -4,54 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FitZone</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">☰</label>
-        <div class="logo-container">
-            <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
-            <label class="logo-text">FitZone</label>
+    <div id="app">
+        <!-- Login Page -->
+        <div id="login-page">
+            <h1>FitZone</h1>
+            <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo">
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+                <p id="error-message"></p>
+            </form>
         </div>
-        <ul>
-        
 
-            <li><a class="active" href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="product.html">Products</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Feedback</a></li>
-            
-        </ul>
-    </nav>
-    <section class="hero">
-        <div class="container">
-            <div class="hero-text">
-                <h3>Transform Your Workout</h3>
-                <h3>Transform Your Life</h3>
-                <h1>JOIN</h1>
-                <h1>FITNESS</h1>
-                <h1>REVOLUTION</h1>
-                <h1>TODAY</h1>
-                <a href="form.html" class="btn">Get Ignited</a>
+        <!-- Admin Dashboard -->
+        <div id="admin-dashboard" class="hidden">
+            <h1>Admin Dashboard</h1>
+            <button id="logout">Logout</button>
+            <div class="dashboard-section">
+                <h2>Manage Tasks</h2>
+                <input type="text" id="task-input" placeholder="New Task">
+                <button id="add-task">Add Task</button>
+                <ul id="task-list"></ul>
+            </div>
+            <div class="dashboard-section">
+                <h2>User Management</h2>
+                <input type="text" id="user-input" placeholder="New User">
+                <button id="add-user">Add User</button>
+                <ul id="user-list"></ul>
             </div>
         </div>
-    </section>
-    <div class="social-icons">
-        <a href="#" aria-label="Facebook">ⓕ</a>
-        <a href="https://www.instagram.com/" aria-label="Instagram">🅾</a>
-        <a href="#" aria-label="Twitter">𝕏</a>
-        <a href="https://www.youtube.com/" aria-label="YouTube">▶</a>
-    </div>
 
-    <footer class="footer">
-        <br>
-        <p>&copy; 2024 FitZone. All rights reserved.</p>
-        <br>
-    </footer>
+        <!-- Employee Dashboard -->
+        <div id="employee-dashboard" class="hidden">
+            <h1>Employee Dashboard</h1>
+            <button id="logout-employee">Logout</button>
+            <div class="dashboard-section">
+                <h2>Your Tasks</h2>
+                <ul id="employee-task-list"></ul>
+            </div>
+            <div class="dashboard-section">
+                <h2>Personal Details</h2>
+                <p id="employee-details"></p>
+                <button id="update-details">Update Details</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
-    </html>
-    
+</html>
