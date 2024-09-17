@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FitZone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #FF0000; /* Red heading */
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            font-size: 18px;
+        }
+        .contact-info span {
+            color: #FF0000; /* Red highlight */
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1c1c1c;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        form input[type="submit"] {
+            background-color: #FF0000;
+            border: none;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #cc0000;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 1px solid #FF0000;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+<nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
+            <label class="logo-text">FitZone</label>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a class="active" href="contact.html">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+</nav>
+
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1>Contact Us</h1>
+
+        <div class="contact-info">
+            <p><span>Phone:</span> +1 800 123 4567</p>
+            <p><span>Email:</span> info@fitzone.com</p>
+            <p><span>Address:</span> 123 FitZone Blvd, Wellness City, USA</p>
+        </div>
+
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 FitZone. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
