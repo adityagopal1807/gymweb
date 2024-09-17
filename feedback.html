@@ -62,23 +62,21 @@
             position: relative;
             display: inline-block;
         }
-        .rating-container input {
-            display: none;
-        }
         .rating-container label {
             font-size: 24px;
             color: #FFFFFF; /* Default star color */
             cursor: pointer;
             display: inline-block;
         }
-        .rating-container input:checked ~ label {
+        .rating-container input {
+            display: none;
+        }
+        .rating-container label.checked,
+        .rating-container label.checked ~ label {
             color: #FF0000; /* Red for selected stars */
         }
-        .rating-container input:checked ~ input ~ label {
-            color: #FF0000; /* Red for preceding stars */
-        }
-        .rating-container input:not(:checked) ~ label:hover,
-        .rating-container input:not(:checked) ~ label:hover ~ label {
+        .rating-container label:hover,
+        .rating-container label:hover ~ label {
             color: #FF0000; /* Red on hover */
         }
         footer {
@@ -141,6 +139,22 @@
 <footer>
     <p>&copy; 2024 FitZone. All Rights Reserved.</p>
 </footer>
+
+<script>
+    document.querySelectorAll('.rating-container input').forEach(input => {
+        input.addEventListener('change', function() {
+            const value = this.value;
+            const labels = document.querySelectorAll('.rating-container label');
+            labels.forEach((label, index) => {
+                if (index < value) {
+                    label.classList.add('checked');
+                } else {
+                    label.classList.remove('checked');
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
