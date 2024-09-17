@@ -69,16 +69,15 @@
         .rating-container input {
             display: none;
         }
-        .rating-container input:checked ~ label,
-        .rating-container label:hover,
-        .rating-container label:hover ~ label {
-            color: #FF0000; /* Red for checked or hovered stars */
-        }
         .rating-container input:checked ~ label {
-            color: #FF0000;
+            color: #FF0000; /* Red for selected stars */
         }
         .rating-container input:checked ~ label ~ label {
-            color: #FFFFFF;
+            color: #FF0000; /* Red for all preceding stars */
+        }
+        .rating-container label:hover,
+        .rating-container label:hover ~ label {
+            color: #FF0000; /* Red on hover */
         }
         
         footer {
