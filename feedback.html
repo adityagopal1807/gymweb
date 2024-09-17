@@ -62,17 +62,23 @@
             margin-top: 20px;
         }
         .rating-container label {
-            margin: 0 5px;
-            font-size: 18px;
-            color: #FF0000;
+            cursor: pointer;
+            font-size: 24px;
+            color: #FFFFFF;
         }
         .rating-container input {
             display: none;
         }
+        .rating-container input:checked ~ label,
         .rating-container label:hover,
-        .rating-container label:hover ~ label,
+        .rating-container label:hover ~ label {
+            color: #FF0000; /* Red for checked or hovered stars */
+        }
         .rating-container input:checked ~ label {
-            color: #cc0000;
+            color: #FF0000;
+        }
+        .rating-container input:checked ~ label ~ label {
+            color: #FFFFFF;
         }
         
         footer {
