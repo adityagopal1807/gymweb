@@ -59,7 +59,11 @@
         .rating-container {
             text-align: center;
             margin-top: 20px;
-            direction: rtl; /* Right-to-left direction for proper star coloring */
+            position: relative;
+            display: inline-block;
+        }
+        .rating-container input {
+            display: none;
         }
         .rating-container label {
             font-size: 24px;
@@ -67,11 +71,8 @@
             cursor: pointer;
             display: inline-block;
         }
-        .rating-container input {
-            display: none;
-        }
         .rating-container input:checked ~ label {
-            color: #FF0000; /* Red for checked stars */
+            color: #FF0000; /* Red for selected stars */
         }
         .rating-container input:checked ~ input ~ label {
             color: #FF0000; /* Red for preceding stars */
