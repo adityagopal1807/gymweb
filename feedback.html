@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback - FitZone</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -61,20 +62,19 @@
             margin-top: 20px;
         }
         .rating-container label {
-            font-size: 24px;
-            color: #FFFFFF; /* Default star color */
-            cursor: pointer;
-            display: inline-block;
+            margin: 0 5px;
+            font-size: 18px;
+            color: #FF0000;
         }
         .rating-container input {
             display: none;
         }
-        .rating-container .star {
-            color: #FFFFFF; /* Default star color */
+        .rating-container label:hover,
+        .rating-container label:hover ~ label,
+        .rating-container input:checked ~ label {
+            color: #cc0000;
         }
-        .rating-container .star.checked {
-            color: #FF0000; /* Red color for checked stars */
-        }
+        
         footer {
             text-align: center;
             margin-top: 40px;
@@ -86,82 +86,58 @@
 </head>
 <body>
 <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">☰</label>
-    <div class="logo-container">
-        <a href="index.html"><img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img"></a>
-        <label class="logo-text">FitZone</label>
-    </div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="product.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a class="active" href="feedback.html">Feedback</a></li>
-    </ul>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">☰</label>
+        <div class="logo-container">
+            <a href="index.html"> <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img"></a>
+            <label class="logo-text">FitZone</label>
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a class="active" href="feedback.html">Feedback</a></li>
+        </ul>
 </nav>
 
-<div class="container">
-    <br>
-    <br>
-    <br>
-    <h1>We Value Your Feedback!</h1>
-    <p>Let us know how we’re doing and how we can improve your FitZone experience.</p>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1>We Value Your Feedback!</h1>
+        <p>Let us know how we’re doing and how we can improve your FitZone experience.</p>
 
-    <form action="https://formspree.io/f/xrbzjabe" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
+        <form action="https://formspree.io/f/xrbzjabe" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
 
-        <div class="rating-container">
-            <p>Rate your experience:</p>
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" class="star" title="5 stars">★</label>
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" class="star" title="4 stars">★</label>
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" class="star" title="3 stars">★</label>
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" class="star" title="2 stars">★</label>
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" class="star" title="1 star">★</label>
-        </div>
+            <div class="rating-container">
+                <p>Rate your experience:</p>
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" title="5 stars">★</label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="4 stars">★</label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="3 stars">★</label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="2 stars">★</label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="1 star">★</label>
+            </div>
 
-        <textarea name="feedback" rows="5" placeholder="Your Feedback" required></textarea>
-        <input type="submit" value="Submit Feedback">
-    </form>
-</div>
+            <textarea name="feedback" rows="5" placeholder="Your Feedback" required></textarea>
+            <input type="submit" value="Submit Feedback">
+        </form>
 
-<footer>
-    <p>&copy; 2024 FitZone. All Rights Reserved.</p>
-</footer>
+        
+    </div>
 
-<script>
-    // Function to update star colors based on the selected rating
-    function updateStars(rating) {
-        const stars = document.querySelectorAll('.rating-container .star');
-        stars.forEach((star, index) => {
-            if (index < rating) {
-                star.classList.add('checked');
-            } else {
-                star.classList.remove('checked');
-            }
-        });
-    }
-
-    // Add event listeners to radio buttons
-    document.querySelectorAll('.rating-container input').forEach(input => {
-        input.addEventListener('change', function() {
-            updateStars(parseInt(this.value));
-        });
-    });
-
-    // Initialize star colors based on the default checked radio button
-    const checkedRadio = document.querySelector('.rating-container input:checked');
-    if (checkedRadio) {
-        updateStars(parseInt(checkedRadio.value));
-    }
-</script>
+    <footer>
+        <p>&copy; 2024 FitZone. All Rights Reserved.</p>
+        
+    </footer>
 
 </body>
 </html>
