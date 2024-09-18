@@ -36,12 +36,14 @@
             border-radius: 10px;
             padding: 20px;
             margin: 15px;
-            width: 300px;
+            width: 280px; /* Reduced width */
             text-align: center;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
         }
         .product-card:hover {
             transform: translateY(-10px); /* Lift card on hover */
+            box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6); /* Red glow effect */
         }
         .product-image img {
             max-width: 100%;
@@ -68,7 +70,7 @@
             font-size: 1em;
         }
         .whatsapp-button {
-            background-color: #25D366;
+            background-color: #FF0000; /* Red button */
             color: white;
             font-size: 1em;
             padding: 10px 20px;
@@ -79,7 +81,7 @@
             transition: background-color 0.3s ease;
         }
         .whatsapp-button:hover {
-            background-color: #1EBE54;
+            background-color: #D40000; /* Darker red on hover */
         }
         footer {
             text-align: center;
@@ -167,4 +169,5 @@
 </footer>
 
 </body>
-</html>
+        </html>
+    
