@@ -31,7 +31,8 @@
             background-color: #1A1A1A; /* Dark gray background */
             padding: 20px;
             border-radius: 10px;
-            transition: box-shadow 0.3s ease-in-out; /* Smooth transition on hover */
+            border: 2px solid transparent;
+            transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out; /* Smooth transition on hover */
         }
         .service-section h2 {
             color: #FF0000; /* Red subheadings */
@@ -63,8 +64,10 @@
             color: #FFFFFF;
         }
 
+        /* Glowing effect on hover */
         .service-section:hover {
-            box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.6); /* Red glow effect */
+            border: 2px solid #FF0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 40px rgba(255, 0, 0, 0.6), 0 0 60px rgba(255, 0, 0, 0.4);
         }
         
     </style>
@@ -154,5 +157,4 @@
     </footer>
 
 </body>
-    </html>
-    
+</html>
