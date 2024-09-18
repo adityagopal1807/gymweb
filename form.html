@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish Form</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', sans-serif;
             background-color: #000000;
             color: #ff0000;
             display: flex;
@@ -16,54 +15,140 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
+            overflow: hidden;
         }
         .form-container {
             background-color: #000000;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 2px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            animation: glow 1.5s ease-in-out infinite alternate;
             width: 300px;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
+            }
         }
         .form-container h2 {
             text-align: center;
             margin-bottom: 20px;
             color: #ff0000;
+            font-size: 24px;
         }
         .form-container label {
             display: block;
             margin-bottom: 5px;
             color: #ff0000;
+            font-weight: bold;
         }
         .form-container input[type="text"],
         .form-container input[type="number"],
         .form-container select {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ff0000;
-            border-radius: 4px;
+            border-radius: 5px;
             background-color: #000000;
             color: #ffffff;
+            box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        .form-container input[type="text"]:focus,
+        .form-container input[type="number"]:focus,
+        .form-container select:focus {
+            outline: none;
+            border-color: #ff3333;
+            box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.8);
         }
         .form-container input[type="submit"] {
             width: 100%;
             background-color: #ff0000;
             color: #000000;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         .form-container input[type="submit"]:hover {
             background-color: #ff3333;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
         }
-        .success-message {
-            display: none;
-            text-align: center;
-            color: #00ff00;
-            margin-top: 20px;
+        .form-container input[type="submit"]:active {
+            background-color: #cc0000;
+            box-shadow: none;
+        }
+        nav {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .logo-container .logo-img {
+            height: 50px;
+            width: 50px;
+            margin-right: 10px;
+        }
+        .logo-container .logo-text {
+            color: #ff0000;
+            font-size: 24px;
             font-weight: bold;
         }
+        ul {
+            list-style: none;
+            display: flex;
+            margin-right: 20px;
+        }
+        ul li {
+            margin-left: 20px;
+        }
+        ul li a {
+            color: #ff0000;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        ul li a:hover {
+            color: #ff3333;
+        }
+
+        /* Stylish Heading */
+        .stylish-heading {
+            color: #ff0000;
+            font-size: 36px;
+            font-weight: bold;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .subtext {
+            color: #ffffff;
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -79,10 +164,15 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="product.html">Products</a></li>
-        <li><a href="product.html">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="feedback.html">Feedback</a></li>
     </ul>
 </nav>
+
+<!-- Stylish Heading Section -->
+<h1 class="stylish-heading">Join the Fitness Revolution!</h1>
+<p class="subtext">Get ready to transform your body and mind with FitZone. Sign up today and start your journey to a healthier you.</p>
+
 <div class="form-container">
     <h2>Sign Up</h2>
     <form action="https://formspree.io/f/xrbzjabe" method="POST">
@@ -121,5 +211,4 @@
     </form>
 </div>
 </body>
-    </html>
-    
+</html>
