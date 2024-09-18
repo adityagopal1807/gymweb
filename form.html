@@ -10,85 +10,17 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #000000;
             color: #ff0000;
+            margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            flex-direction: column;
             overflow: hidden;
         }
-        .form-container {
-            background-color: #000000;
-            padding: 20px;
-            border-radius: 10px;
-            border: 2px solid #ff0000;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-            animation: glow 1.5s ease-in-out infinite alternate;
-            width: 300px;
-        }
-        @keyframes glow {
-            from {
-                box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
-            }
-            to {
-                box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
-            }
-        }
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #ff0000;
-            font-size: 24px;
-        }
-        .form-container label {
-            display: block;
-            margin-bottom: 5px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-        .form-container input[type="text"],
-        .form-container input[type="number"],
-        .form-container select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ff0000;
-            border-radius: 5px;
-            background-color: #000000;
-            color: #ffffff;
-            box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.5);
-            transition: all 0.3s ease;
-        }
-        .form-container input[type="text"]:focus,
-        .form-container input[type="number"]:focus,
-        .form-container select:focus {
-            outline: none;
-            border-color: #ff3333;
-            box-shadow: inset 0 0 15px rgba(255, 0, 0, 0.8);
-        }
-        .form-container input[type="submit"] {
-            width: 100%;
-            background-color: #ff0000;
-            color: #000000;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .form-container input[type="submit"]:hover {
-            background-color: #ff3333;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-        }
-        .form-container input[type="submit"]:active {
-            background-color: #cc0000;
-            box-shadow: none;
-        }
+        /* Navbar */
         nav {
-            position: absolute;
+            position: fixed;
             top: 0;
             width: 100%;
             padding: 10px 0;
@@ -104,13 +36,13 @@
             margin-left: 20px;
         }
         .logo-container .logo-img {
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             margin-right: 10px;
         }
         .logo-container .logo-text {
             color: #ff0000;
-            font-size: 24px;
+            font-size: 20px;
             font-weight: bold;
         }
         ul {
@@ -124,37 +56,93 @@
         ul li a {
             color: #ff0000;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            transition: color 0.3s ease;
         }
         ul li a:hover {
             color: #ff3333;
         }
-
         /* Stylish Heading */
         .stylish-heading {
             color: #ff0000;
-            font-size: 36px;
+            font-size: 28px;
             font-weight: bold;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
-            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+            margin-bottom: 10px;
             text-align: center;
+            margin-top: 70px; /* To avoid overlapping with nav */
         }
-
         .subtext {
             color: #ffffff;
-            font-size: 16px;
+            font-size: 14px;
             margin-bottom: 20px;
             text-align: center;
         }
+        /* Form Container */
+        .form-container {
+            background-color: #000000;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+            width: 280px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(255, 0, 0, 1), 0 0 40px rgba(255, 0, 0, 0.9);
+            }
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ff0000;
+            font-weight: bold;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="number"],
+        .form-container select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ff0000;
+            border-radius: 4px;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        .form-container input[type="submit"] {
+            width: 100%;
+            background-color: #ff0000;
+            color: #000000;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #ff3333;
+        }
 
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 10px;
+            }
+            .form-container {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
+
 <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">☰</label>
     <div class="logo-container">
         <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
         <label class="logo-text">FitZone</label>
@@ -210,5 +198,7 @@
         <input type="submit" value="Submit">
     </form>
 </div>
+
 </body>
-</html>
+    </html>
+    
