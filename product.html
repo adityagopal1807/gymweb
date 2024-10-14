@@ -186,15 +186,37 @@
 </footer>
 
 <script>
-    // Initialize the cart if not already initialized
+    // Initialize the cart from localStorage or as an empty array
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Add item to cart
+    // Function to add products to the cart
     function addToCart(product, price) {
+        // Add selected product to cart
         cart.push({ product, price });
+        
+        // Save updated cart to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Alert user that item has been added
         alert(`${product} has been added to your cart!`);
     }
+
+    // Function to display cart items
+    function displayCart() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartElement = document.getElementById('cart-items');
+        
+        cartElement.innerHTML = ''; // Clear cart items before re-rendering
+        
+        cartItems.forEach((item, index) => {
+            cartElement.innerHTML += `<li>${item.product} - ₹${item.price}</li>`;
+        });
+    }
+
+    // Call displayCart when cart page is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        displayCart();
+    });
 </script>
 
 </body>
