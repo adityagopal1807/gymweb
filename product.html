@@ -71,19 +71,6 @@
             font-size: 1em;
         }
         .add-to-cart-button {
-            background-color: #FF0000;
-            color: white;
-            font-size: 1em;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .add-to-cart-button:hover {
-            background-color: #D40000;
-        }
-        .whatsapp-button {
             background-color: #FF0000; /* Red button */
             color: white;
             font-size: 1em;
@@ -92,9 +79,10 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
+            cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .whatsapp-button:hover {
+        .add-to-cart-button:hover {
             background-color: #D40000; /* Darker red on hover */
         }
         footer {
@@ -122,7 +110,7 @@
         <li><a class="active" href="products.html">Shop</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="cart.html">Cart</a></li> <!-- Cart link in the navigation -->
+        <li><a href="cart.html">Cart</a></li> <!-- Added Cart Link -->
     </ul>
 </nav>
 
@@ -174,11 +162,6 @@
             <button class="add-to-cart-button" onclick="addToCart('Protein Powder', 1000)">Add to Cart</button>
         </div>
     </div>
-
-    <!-- View Cart button at the bottom of the page -->
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="cart.html" class="whatsapp-button">View Cart</a>
-    </div>
 </div>
 
 <footer>
@@ -186,37 +169,12 @@
 </footer>
 
 <script>
-    // Initialize the cart from localStorage or as an empty array
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Function to add products to the cart
     function addToCart(product, price) {
-        // Add selected product to cart
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push({ product, price });
-        
-        // Save updated cart to localStorage
         localStorage.setItem('cart', JSON.stringify(cart));
-        
-        // Alert user that item has been added
         alert(`${product} has been added to your cart!`);
     }
-
-    // Function to display cart items
-    function displayCart() {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartElement = document.getElementById('cart-items');
-        
-        cartElement.innerHTML = ''; // Clear cart items before re-rendering
-        
-        cartItems.forEach((item, index) => {
-            cartElement.innerHTML += `<li>${item.product} - ₹${item.price}</li>`;
-        });
-    }
-
-    // Call displayCart when cart page is loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        displayCart();
-    });
 </script>
 
 </body>
