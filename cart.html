@@ -68,28 +68,70 @@
 </div>
 
 <script>
-    // Function to display cart items and calculate total
-    function displayCart() {
-        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        const cartElement = document.getElementById('cart-items');
-        const totalPriceElement = document.getElementById('total-price');
-        
-        cartElement.innerHTML = ''; // Clear previous items
+    // Initialize cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || []; // This initializes the cart from localStorage, or sets it to an empty array if no items are present
+
+    // Function to update cart display
+    function updateCartDisplay() {
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
+        cartItems.innerHTML = ''; // Clear current items
         let total = 0;
 
-        cartItems.forEach(item => {
-            cartElement.innerHTML += `<li>${item.product} - ₹${item.price}</li>`;
+        // Check if the cart is empty
+        if (cart.length === 0) {
+            cartItems.innerHTML = '<li>Your cart is empty.</li>'; // Message if the cart is empty
+            cartTotal.innerText = '0'; // Total should be 0
+            return;
+        }
+
+        // Populate the cart items
+        cart.forEach((item, index) => {
+            cartItems.innerHTML += `
+                <li>
+                    ${item.product} - ₹${item.price}
+                    <button onclick="removeFromCart(${index})">Remove</button>
+                </li>
+            `;
             total += item.price; // Calculate total price
         });
 
-        totalPriceElement.innerHTML = `Total: ₹${total}`; // Display total price
+        cartTotal.innerText = total; // Update total display
     }
 
-    // Call displayCart when the page is loaded
-    document.addEventListener('DOMContentLoaded', function () {
-        displayCart();
-    });
-</script>
+    // Function to remove items from the cart
+    function removeFromCart(index) {
+        cart.splice(index, 1); // Remove item from cart
+        localStorage.setItem('cart', JSON.stringify(cart)); // Update localStorage
+        updateCartDisplay(); // Refresh cart display
+    }
 
+    // Function to place an order (checkout)
+    function placeOrder() {
+        if (cart.length === 0) {
+            alert('Your cart is empty!'); // Alert if cart is empty
+            return;
+        }
+        let orderDetails = 'Thank you for your order!\n\nYou have ordered:\n';
+        let totalAmount = 0;
+
+        // Generate order details
+        cart.forEach(item => {
+            orderDetails += `- ${item.product} (₹${item.price})\n`;
+            totalAmount += item.price;
+        });
+
+        orderDetails += `\nTotal Amount: ₹${totalAmount}\nWe will contact you shortly to confirm your order.`;
+
+        // Clear cart after placing the order
+        alert(orderDetails); // Confirmation alert
+        cart = []; // Reset cart
+        localStorage.removeItem('cart'); // Remove from localStorage
+        updateCartDisplay(); // Refresh cart display
+    }
+
+    // Initial display update when page loads
+    updateCartDisplay(); // Call function to display cart items
+</script>
 </body>
 </html>
