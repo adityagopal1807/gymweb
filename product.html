@@ -70,7 +70,20 @@
             margin-bottom: 15px;
             font-size: 1em;
         }
-        .cart-button, .whatsapp-button {
+        .add-to-cart-button {
+            background-color: #FF0000;
+            color: white;
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .add-to-cart-button:hover {
+            background-color: #D40000;
+        }
+        .whatsapp-button {
             background-color: #FF0000; /* Red button */
             color: white;
             font-size: 1em;
@@ -79,10 +92,9 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
-            margin: 5px;
             transition: background-color 0.3s ease;
         }
-        .cart-button:hover, .whatsapp-button:hover {
+        .whatsapp-button:hover {
             background-color: #D40000; /* Darker red on hover */
         }
         footer {
@@ -108,7 +120,9 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a class="active" href="products.html">Shop</a></li>
-        <li><a href="cart.html">Cart</a></li> <!-- New Cart page link -->
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="cart.html">Cart</a></li> <!-- Cart link in the navigation -->
     </ul>
 </nav>
 
@@ -124,7 +138,7 @@
             <h2 class="product-title">Dumbbells</h2>
             <p class="product-description">Durable and balanced dumbbells perfect for strength training.</p>
             <p class="product-price">₹500</p>
-            <button class="cart-button" onclick="addToCart('Dumbbells', 500)">Add to Cart</button>
+            <button class="add-to-cart-button" onclick="addToCart('Dumbbells', 500)">Add to Cart</button>
         </div>
 
         <!-- Product 2 -->
@@ -135,7 +149,7 @@
             <h2 class="product-title">Yoga Mat</h2>
             <p class="product-description">High-quality, non-slip yoga mat for all your fitness needs.</p>
             <p class="product-price">₹250</p>
-            <button class="cart-button" onclick="addToCart('Yoga Mat', 250)">Add to Cart</button>
+            <button class="add-to-cart-button" onclick="addToCart('Yoga Mat', 250)">Add to Cart</button>
         </div>
 
         <!-- Product 3 -->
@@ -146,7 +160,7 @@
             <h2 class="product-title">Resistance Bands</h2>
             <p class="product-description">Versatile resistance bands ideal for strength and flexibility workouts.</p>
             <p class="product-price">₹200</p>
-            <button class="cart-button" onclick="addToCart('Resistance Bands', 200)">Add to Cart</button>
+            <button class="add-to-cart-button" onclick="addToCart('Resistance Bands', 200)">Add to Cart</button>
         </div>
 
         <!-- Product 4 -->
@@ -157,8 +171,13 @@
             <h2 class="product-title">Protein Powder</h2>
             <p class="product-description">Premium whey protein powder to support muscle recovery and growth.</p>
             <p class="product-price">₹1000</p>
-            <button class="cart-button" onclick="addToCart('Protein Powder', 1000)">Add to Cart</button>
+            <button class="add-to-cart-button" onclick="addToCart('Protein Powder', 1000)">Add to Cart</button>
         </div>
+    </div>
+
+    <!-- View Cart button at the bottom of the page -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="cart.html" class="whatsapp-button">View Cart</a>
     </div>
 </div>
 
@@ -167,23 +186,14 @@
 </footer>
 
 <script>
-    // Function to add items to the cart
+    // Initialize cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Add item to cart
     function addToCart(product, price) {
-        let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
         cart.push({ product, price });
         localStorage.setItem('cart', JSON.stringify(cart));
-        alert(product + ' added to cart!');
-    }
-
-    // Confirmation function for placing an order
-    function placeOrder() {
-        let cart = localStorage.getItem('cart');
-        if (cart) {
-            localStorage.removeItem('cart');
-            alert('Thank you for your order! Your items have been ordered.');
-        } else {
-            alert('Your cart is empty.');
-        }
+        alert(`${product} has been added to your cart!`);
     }
 </script>
 
