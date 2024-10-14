@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart - FitZone</title>
+    <title>Shopping Cart - FitZone</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://i.ibb.co/C97xxVM/FITZONE-20240920-170320-0000-photoaidcom-cropped.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #000000;
-            color: #FFFFFF;
-            font-family: 'Roboto', sans-serif;
+            background-color: #000000; /* Black background */
+            color: #FFFFFF; /* White text */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -18,93 +19,53 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-            text-align: center;
         }
         h1 {
-            color: #FF0000;
+            color: #FF0000; /* Red heading */
+            text-align: center;
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
         }
         .cart-items {
-            list-style: none;
+            list-style-type: none;
             padding: 0;
-            margin-bottom: 20px;
         }
         .cart-items li {
-            background-color: #1A1A1A;
-            border: 1px solid #FF0000;
+            background-color: #1A1A1A; /* Dark gray background */
             padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
-        .cart-items button {
-            background-color: #FF0000;
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .cart-items button:hover {
-            background-color: #D40000;
-        }
-        .cart-total {
-            font-size: 1.5em;
-            margin-bottom: 20px;
+        .total {
+            margin-top: 20px;
+            font-size: 1.2em;
         }
         .checkout-button {
-            background-color: #FF0000;
+            background-color: #FF0000; /* Red button */
             color: white;
-            padding: 15px 30px;
+            font-size: 1em;
+            padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            font-size: 1.2em;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
             cursor: pointer;
         }
         .checkout-button:hover {
-            background-color: #D40000;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            border-top: 1px solid #FF0000;
-            color: #FFFFFF;
+            background-color: #D40000; /* Darker red on hover */
         }
     </style>
 </head>
 <body>
 
-<nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">☰</label>
-    <div class="logo-container">
-        <img src="https://i.ibb.co/P61MKq4/FITZONE-logo.png" alt="FitZone Logo" class="logo-img">
-        <label class="logo-text">FitZone</label>
-    </div>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="product.html">Shop</a></li>
-        <li><a class="active" href="cart.html">Cart</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-    </ul>
-</nav>
-
 <div class="container">
-    <h1>Your Cart</h1>
-    <ul class="cart-items" id="cartItems"></ul>
-    <div class="cart-total">Total: ₹<span id="cartTotal">0</span></div>
-    <button class="checkout-button" onclick="placeOrder()">Place Order</button>
+    <h1>Your Shopping Cart</h1>
+    <ul id="cart-items" class="cart-items"></ul>
+    <div class="total" id="total-price">Total: ₹0</div>
+    <a href="products.html" class="checkout-button">Continue Shopping</a>
 </div>
-
-<footer>
-    <p>&copy; 2024 FitZone. All Rights Reserved.</p>
-</footer>
 
 <script>
     // Function to display cart items and calculate total
