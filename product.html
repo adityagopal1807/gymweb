@@ -70,7 +70,7 @@
             margin-bottom: 15px;
             font-size: 1em;
         }
-        .whatsapp-button {
+        .cart-button, .whatsapp-button {
             background-color: #FF0000; /* Red button */
             color: white;
             font-size: 1em;
@@ -79,9 +79,10 @@
             border-radius: 5px;
             text-decoration: none;
             display: inline-block;
+            margin: 5px;
             transition: background-color 0.3s ease;
         }
-        .whatsapp-button:hover {
+        .cart-button:hover, .whatsapp-button:hover {
             background-color: #D40000; /* Darker red on hover */
         }
         footer {
@@ -107,15 +108,11 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a class="active" href="products.html">Shop</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
+        <li><a href="cart.html">Cart</a></li> <!-- New Cart page link -->
     </ul>
 </nav>
 
 <div class="container">
-    <br>
-    <br>
-    <br>
     <h1>Our Products</h1>
 
     <div class="product-section">
@@ -127,7 +124,7 @@
             <h2 class="product-title">Dumbbells</h2>
             <p class="product-description">Durable and balanced dumbbells perfect for strength training.</p>
             <p class="product-price">₹500</p>
-            <a href="https://wa.me/9955428948?text=I'm%20interested%20in%20buying%20Dumbbells" class="whatsapp-button">Buy on WhatsApp</a>
+            <button class="cart-button" onclick="addToCart('Dumbbells', 500)">Add to Cart</button>
         </div>
 
         <!-- Product 2 -->
@@ -138,7 +135,7 @@
             <h2 class="product-title">Yoga Mat</h2>
             <p class="product-description">High-quality, non-slip yoga mat for all your fitness needs.</p>
             <p class="product-price">₹250</p>
-            <a href="https://wa.me/9955428948?text=I'm%20interested%20in%20buying%20Yoga%20Mat" class="whatsapp-button">Buy on WhatsApp</a>
+            <button class="cart-button" onclick="addToCart('Yoga Mat', 250)">Add to Cart</button>
         </div>
 
         <!-- Product 3 -->
@@ -149,7 +146,7 @@
             <h2 class="product-title">Resistance Bands</h2>
             <p class="product-description">Versatile resistance bands ideal for strength and flexibility workouts.</p>
             <p class="product-price">₹200</p>
-            <a href="https://wa.me/9955428948?text=I'm%20interested%20in%20buying%20Resistance%20Bands" class="whatsapp-button">Buy on WhatsApp</a>
+            <button class="cart-button" onclick="addToCart('Resistance Bands', 200)">Add to Cart</button>
         </div>
 
         <!-- Product 4 -->
@@ -160,7 +157,7 @@
             <h2 class="product-title">Protein Powder</h2>
             <p class="product-description">Premium whey protein powder to support muscle recovery and growth.</p>
             <p class="product-price">₹1000</p>
-            <a href="https://wa.me/9955428948?text=I'm%20interested%20in%20buying%20Protein%20Powder" class="whatsapp-button">Buy on WhatsApp</a>
+            <button class="cart-button" onclick="addToCart('Protein Powder', 1000)">Add to Cart</button>
         </div>
     </div>
 </div>
@@ -169,6 +166,26 @@
     <p>&copy; 2024 FitZone. All Rights Reserved.</p>
 </footer>
 
+<script>
+    // Function to add items to the cart
+    function addToCart(product, price) {
+        let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+        cart.push({ product, price });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(product + ' added to cart!');
+    }
+
+    // Confirmation function for placing an order
+    function placeOrder() {
+        let cart = localStorage.getItem('cart');
+        if (cart) {
+            localStorage.removeItem('cart');
+            alert('Thank you for your order! Your items have been ordered.');
+        } else {
+            alert('Your cart is empty.');
+        }
+    }
+</script>
+
 </body>
-        </html>
-    
+</html>
