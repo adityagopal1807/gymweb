@@ -107,60 +107,27 @@
 </footer>
 
 <script>
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    // Function to update cart display
-    function updateCartDisplay() {
-        const cartItems = document.getElementById('cartItems');
-        const cartTotal = document.getElementById('cartTotal');
-        cartItems.innerHTML = '';
+    // Function to display cart items and calculate total
+    function displayCart() {
+        const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartElement = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+        
+        cartElement.innerHTML = ''; // Clear previous items
         let total = 0;
 
-        cart.forEach((item, index) => {
-            cartItems.innerHTML += `
-                <li>
-                    ${item.product} - ₹${item.price}
-                    <button onclick="removeFromCart(${index})">Remove</button>
-                </li>
-            `;
-            total += item.price;
+        cartItems.forEach(item => {
+            cartElement.innerHTML += `<li>${item.product} - ₹${item.price}</li>`;
+            total += item.price; // Calculate total price
         });
 
-        cartTotal.innerText = total;
+        totalPriceElement.innerHTML = `Total: ₹${total}`; // Display total price
     }
 
-    // Function to remove items from the cart
-    function removeFromCart(index) {
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartDisplay();
-    }
-
-    // Function to place an order (checkout)
-    function placeOrder() {
-        if (cart.length === 0) {
-            alert('Your cart is empty!');
-            return;
-        }
-        let orderDetails = 'Thank you for your order!\n\nYou have ordered:\n';
-        let totalAmount = 0;
-
-        cart.forEach(item => {
-            orderDetails += `- ${item.product} (₹${item.price})\n`;
-            totalAmount += item.price;
-        });
-
-        orderDetails += `\nTotal Amount: ₹${totalAmount}\nWe will contact you shortly to confirm your order.`;
-
-        // Clear cart after placing the order
-        alert(orderDetails);
-        cart = [];
-        localStorage.removeItem('cart');
-        updateCartDisplay();
-    }
-
-    // Initial display update when page loads
-    updateCartDisplay();
+    // Call displayCart when the page is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+        displayCart();
+    });
 </script>
 
 </body>
